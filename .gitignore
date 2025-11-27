@@ -31,3 +31,24 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# IDE
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
