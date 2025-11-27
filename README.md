@@ -57,17 +57,38 @@ Crea una base de datos MySQL:
 CREATE DATABASE puente_tecnologico CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-### 3. Configurar credenciales de MySQL
+### 3. Configurar Variables de Entorno
 
-Edita `src/main/resources/application.properties` con tus credenciales:
+Por seguridad, las credenciales se configuran mediante variables de entorno. Copia el archivo `.env.example`:
 
-```properties
-spring.datasource.username=root
-spring.datasource.password=tu_contraseña
-spring.datasource.url=jdbc:mysql://localhost:3306/puente_tecnologico
+```bash
+cp .env.example .env
+```
+
+Edita `.env` con tus credenciales (este archivo está en `.gitignore` y no se subirá a GitHub):
+
+```env
+DB_URL=jdbc:mysql://localhost:3306/puente_tecnologico
+DB_USERNAME=root
+DB_PASSWORD=tu_contraseña_segura
+PORT=8081
 ```
 
 ### 4. Ejecutar la aplicación
+
+**Con variables de entorno cargadas:**
+
+```bash
+# Linux/Mac
+export $(cat .env | xargs)
+./mvnw spring-boot:run
+
+# Windows PowerShell
+Get-Content .env | ForEach-Object { $parts = $_ -split '='; [System.Environment]::SetEnvironmentVariable($parts[0], $parts[1], 'Process') }
+.\mvnw spring-boot:run
+```
+
+**O directamente con Maven:**
 
 ```bash
 # Con Maven
@@ -79,6 +100,17 @@ java -jar target/tecnologico-1.0.0.jar
 ```
 
 La aplicación estará disponible en: **http://localhost:8081**
+
+## 🔒 Seguridad
+
+Este proyecto implementa mejores prácticas de seguridad:
+
+- ✅ **No almacena credenciales en código fuente**
+- ✅ **Usa variables de entorno para datos sensibles**
+- ✅ **Archivo `.env` está en `.gitignore`** (nunca se sube a GitHub)
+- ✅ **Archivo `SECURITY.md`** con instrucciones detalladas
+
+**Importante**: Ver [SECURITY.md](SECURITY.md) para configurar variables de entorno correctamente.
 
 ## Estructura del Proyecto
 
