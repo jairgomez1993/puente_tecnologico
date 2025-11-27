@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Convenios Universitarios - Puente Tecnológico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-1: #0077b6;
+            --primary-2: #00b4d8;
+            --bg-1: #eaf6ff;
+            --card: #ffffff;
+            --muted: #6b7280;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', system-ui, Arial, sans-serif;
+            background: linear-gradient(180deg, var(--bg-1), #f2fbff);
+            color: #0f172a;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 36px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(6px);
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .brand .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--primary-1), var(--primary-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+        }
+        .brand h1 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        nav {
+            display: flex;
+            gap: 12px;
+        }
+        nav a {
+            margin-left: 18px;
+            color: var(--primary-1);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 18px;
+        }
+        .hero {
+            background: var(--card);
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.06);
+            margin-bottom: 18px;
+        }
+        .hero h2 {
+            margin-top: 0;
+            color: var(--primary-1);
+        }
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 20px;
+        }
+        .card {
+            background: var(--card);
+            padding: 16px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(2, 6, 23, 0.04);
+        }
+        .uni-name {
+            color: var(--primary-1);
+            font-weight: 700;
+            margin: 0;
+        }
+        .carreras {
+            margin-top: 10px;
+        }
+        .carrera {
+            display: inline-block;
+            background: var(--bg-1);
+            color: var(--primary-1);
+            padding: 6px 10px;
+            border-radius: 16px;
+            margin: 6px 6px 0 0;
+            font-size: 0.9rem;
+        }
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        main {
+            min-height: calc(100vh - 100px);
+        }
+        @media (max-width: 900px) {
+            .columns {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 12px;
+            }
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <div class="logo">PT</div>
+            <h1>Puente Tecnológico</h1>
+        </div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/vacantes">Vacantes</a>
+            <a href="/convenios" style="border-bottom:2px solid">Convenios</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="hero card">
+            <h2>Estudia con nosotros</h2>
+            <p>Conoce las universidades con las que tenemos convenios y las carreras disponibles para el acompañamiento y vinculación con nuestros programas.</p>
+        </div>
+
+        <div class="columns">
+            <div>
+                <h3>Universidades inscritas</h3>
+                <div th:each="uni : ${universidades}" class="card" style="margin-bottom:12px">
+                    <h4 class="uni-name" th:text="${uni.nombre}">Universidad</h4>
+                    <p th:text="${uni.descripcion}">Descripción breve de la universidad.</p>
+                    <div class="carreras">
+                        <strong>Carreras:</strong>
+                        <div>
+                            <span class="carrera" th:each="c : ${uni.carreras}" th:text="${c}">Carrera</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="card">
+                    <h4>Contacto y beneficios</h4>
+                    <p>Si su universidad desea establecer un convenio con Puente Tecnológico, contáctenos en <strong>convenios@puentetecnologico.edu</strong>.</p>
+                    <ul>
+                        <li>Acceso a bolsa de empleo estudiantil</li>
+                        <li>Programas de prácticas profesionales</li>
+                        <li>Charlas y talleres universitarios</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-top:12px">
+                    <h4>Universidades destacadas</h4>
+                    <p><strong>Uniminuto</strong> — Presencia regional y programas tecnológicos.</p>
+                    <p><strong>Corporación Universitaria Republicana</strong> — Formación profesional y tecnológica.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer style="text-align:center;padding:20px;color:#6b7280">
+        © 2025 Puente Tecnológico
+    </footer>
+</body>
+</html>

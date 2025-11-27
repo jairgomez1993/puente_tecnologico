@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vacantes Disponibles - Puente Tecnológico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root{
+            --primary-1:#0077b6;
+            --primary-2:#00b4d8;
+            --bg-1:#eaf6ff;
+            --card:#ffffff;
+            --muted:#6b7280;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;font-family:'Montserrat',system-ui,Arial,sans-serif;background:linear-gradient(180deg,var(--bg-1),#f2fbff);color:#0f172a;min-height:100vh;
+        }
+        header{display:flex;justify-content:space-between;align-items:center;padding:18px 36px;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px);}
+        .brand{display:flex;align-items:center;gap:12px}
+        .brand .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(90deg,var(--primary-1),var(--primary-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+        .brand h1{margin:0;font-size:1.1rem}
+        nav a{margin-left:18px;color:var(--primary-1);text-decoration:none;font-weight:600}
+        .container{max-width:1200px;margin:0 auto;padding:40px 20px}
+        .page-title{color:var(--primary-1);margin-bottom:30px;display:flex;align-items:center;gap:12px}
+        .page-title i{font-size:1.8rem}
+        .vacantes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+        .vacante-card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 8px 30px rgba(2,6,23,0.06)}
+        .empresa-name{color:var(--primary-1);font-size:1.2rem;margin:0 0 12px}
+        .sector-badge{display:inline-block;background:var(--bg-1);color:var(--primary-1);padding:4px 10px;border-radius:20px;font-size:0.9rem;margin-bottom:12px}
+        .nivel-badge{display:inline-block;background:linear-gradient(90deg,var(--primary-1),var(--primary-2));color:#fff;padding:4px 10px;border-radius:20px;font-size:0.9rem;margin-left:8px}
+        .details{color:var(--muted);font-size:0.95rem;margin:12px 0}
+        .detail-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+        .detail-row i{color:var(--primary-2);width:20px}
+        .vacantes-number{font-weight:700;color:var(--primary-1)}
+        .herramientas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+        .herramienta{background:var(--bg-1);color:var(--primary-1);padding:4px 10px;border-radius:20px;font-size:0.85rem}
+        .empty-state{text-align:center;color:var(--muted);padding:40px;font-size:1.1rem}
+        footer{padding:20px;text-align:center;color:var(--muted);font-size:0.95rem}
+        @media(max-width:600px){
+            header{padding:12px 20px}
+            .container{padding:20px}
+            .vacantes-grid{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <div class="logo">PT</div>
+            <h1>Puente Tecnológico</h1>
+        </div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/vacantes" style="border-bottom:2px solid">Vacantes</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="page-title">
+            <i class="fas fa-briefcase"></i>
+            Vacantes Disponibles
+        </h2>
+
+        <div class="vacantes-grid">
+            <div class="vacante-card">
+                <h3 class="empresa-name">EDUIN JAIR GOMEZ</h3>
+                <span class="sector-badge">administrador </span>
+                <span class="nivel-badge"></span>
+                
+                <div class="details">
+                    <div class="detail-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>jairgomez1993@gmail.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-clock"></i>
+                        <span></span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-users"></i>
+                        <span>
+                            <span class="vacantes-number"></span> vacantes disponibles
+                        </span>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+            <div class="vacante-card">
+                <h3 class="empresa-name">jersy tatiana</h3>
+                <span class="sector-badge">cajera</span>
+                <span class="nivel-badge"></span>
+                
+                <div class="details">
+                    <div class="detail-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>tatiana@gmail.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-clock"></i>
+                        <span></span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-users"></i>
+                        <span>
+                            <span class="vacantes-number"></span> vacantes disponibles
+                        </span>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+            <div class="vacante-card">
+                <h3 class="empresa-name">joel</h3>
+                <span class="sector-badge">dueño</span>
+                <span class="nivel-badge"></span>
+                
+                <div class="details">
+                    <div class="detail-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>joeltemao@hijomio</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-clock"></i>
+                        <span></span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-users"></i>
+                        <span>
+                            <span class="vacantes-number"></span> vacantes disponibles
+                        </span>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+            <div class="vacante-card">
+                <h3 class="empresa-name">si18 calle 80</h3>
+                <span class="sector-badge">transporte</span>
+                <span class="nivel-badge"></span>
+                
+                <div class="details">
+                    <div class="detail-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>jairgomez18837@gmail.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-clock"></i>
+                        <span>2 meses</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-users"></i>
+                        <span>
+                            <span class="vacantes-number">10</span> vacantes disponibles
+                        </span>
+                    </div>
+                </div>
+
+                
+
+                <div class="herramientas">
+                    <span class="herramienta">excel</span>
+                </div>
+            </div>
+            <div class="vacante-card">
+                <h3 class="empresa-name">Empresa Prueba</h3>
+                <span class="sector-badge">Software</span>
+                <span class="nivel-badge">Profesional</span>
+                
+                <div class="details">
+                    <div class="detail-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>jairgomez18837@gmail.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-clock"></i>
+                        <span>4 semanas</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-users"></i>
+                        <span>
+                            <span class="vacantes-number">2</span> vacantes disponibles
+                        </span>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <i class="fas fa-list-check"></i>
+                    <span>Desarrollador backend</span>
+                </div>
+
+                <div class="herramientas">
+                    <span class="herramienta">Java</span><span class="herramienta">Spring Boot</span><span class="herramienta">MySQL</span>
+                </div>
+            </div>
+            <div class="vacante-card">
+                <h3 class="empresa-name">Empresa Prueba Final</h3>
+                <span class="sector-badge">Tecnología</span>
+                <span class="nivel-badge">Profesional</span>
+                
+                <div class="details">
+                    <div class="detail-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>persistencia@test.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-clock"></i>
+                        <span>1 mes</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-users"></i>
+                        <span>
+                            <span class="vacantes-number">5</span> vacantes disponibles
+                        </span>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <i class="fas fa-list-check"></i>
+                    <span>Ninguno</span>
+                </div>
+
+                <div class="herramientas">
+                    <span class="herramienta">Java</span><span class="herramienta">Spring Boot</span><span class="herramienta">MySQL</span>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer>
+        <p>© 2025 Puente Tecnológico - Conectando Universidad y Empresa</p>
+    </footer>
+</body>
+</html>
